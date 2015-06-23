@@ -7,7 +7,7 @@
  * Dependencies: This javascript plugin uses 'Cookies'.
  * Uses: 
  * // include timer.js file and then
- * timer.init();
+ * timer.init(); // Initiate timer instance
  * document.addEventListener('updateTimer', function(e){
  *     document.getElementById('mytimer').innerHTML = e.detail.time;
  * });
@@ -71,6 +71,16 @@ var timer = {
 			this.isRunning = false;
 			this.setCookie('isTimerRunning', 'false');
 			this.setCookie('pTimer', Date.now());
+		}
+	},
+	setStartTime: function(seconds)
+	{
+		this.counts = seconds;
+		this.timestamp = ((Date.now()/1000) - this.counts) * 1000;
+		this.setCookie('aTimer', this.timestamp);
+		if(!this.isRunning){
+			this.setCookie('pTimer', Date.now());
+			this.update();
 		}
 	},
 	reset: function()

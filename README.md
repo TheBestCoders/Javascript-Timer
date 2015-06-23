@@ -23,6 +23,7 @@ also have start, pause, reset features.
   <button onclick="timer.start();">Start</button>
   <button onclick="timer.pause();">Pause</button>
   <button onclick="timer.reset();">Reset</button>
+  <button onclick="setTime();">Set Time</button>
 
   <script type="text/javascript">
   window.onload = function()
@@ -33,6 +34,15 @@ also have start, pause, reset features.
   document.addEventListener('updateTimer', function(e){
   	document.getElementById('mytimer').innerHTML = e.detail.time;
   });
+
+  function setTime()
+  {
+    var t = parseInt(prompt("Enter time in seconds to start.", 0));
+    if(!isNaN(t))
+      timer.setStartTime(t);
+    else
+      alert("Enter only numeric digits");
+  }
   </script>
 </body>
 </html>
