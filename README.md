@@ -3,9 +3,6 @@ Javascript Timer with the feature to keep running even if page refresh or browse
 also have start, pause, reset features.
 
 
-[Demo](http://thebestcoders.com/javascript-timer)
-
-
 **Dependencies:** This javascript plugin uses browser's cookies.
 
 **Uses:**
